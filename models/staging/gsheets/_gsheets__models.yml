@@ -1,0 +1,17 @@
+version: 2
+
+models:
+
+      - name: stg_ghseets__actor
+        columns:
+          - name: actor_id
+            description: "Unique identifier of actor"
+            tests:
+              - unique
+              - not_null
+          - name: last_name
+            descrpion: "Last name of actor"
+          - name: first_name
+            descrpion: "Last name of actor"
+          - name: last_update
+
