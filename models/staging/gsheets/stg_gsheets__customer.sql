@@ -11,7 +11,7 @@ final as (
   select 
 
     cast(customer_id as int) as customer_id,
-    email as customer_emal,
+    email as customer_email,
 
     case 
       when active = 1 then 'true'
