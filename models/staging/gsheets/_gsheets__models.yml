@@ -1,0 +1,240 @@
+version: 2
+
+models:
+
+      - name: stg_gsheets__actor
+        columns:
+          - name: actor_id
+            description: "Unique identifier of actor"
+            tests:
+              - unique
+              - not_null
+          - name: last_name
+            descrpion: "Last name of actor"
+          - name: first_name
+            descrpion: "Last name of actor"
+          - name: last_update
+            description: "The timestamp of the last update to the actros record."
+      
+      - name: stg_gsheets__address
+        columns:
+          - name: address_id
+            description: "The unique identifier for the address."
+          - name: phone
+            description: "The phone number associated with the address."
+          - name: address
+            description: "The primary address line."
+          - name: address2
+            description: "The secondary address line (optional)."
+          - name: city_id
+            description: "The unique identifier for the city."
+          - name: district
+            description: "The district or region of the address."
+          - name: postal_code
+            description: "The postal code associated with the address."
+          - name: last_update
+            description: "The timestamp of the last update to the address record."
+
+      - name: stg_gsheets__category
+        columns:
+          - name: category_id
+            description: "Unique identifier for category"
+            test:
+            - unique
+            - not_null
+          - name: name
+            description: "Name of category"
+          - name: last_update
+            description: "The timestamp of the last update to the category record."
+
+      - name: stg_gsheets__city
+        columns:
+          - name: city_id
+            description: ""
+            test:
+              - unique
+              - not_null
+          - name: country_id
+            description: ""
+          - name: city
+            description: ""
+          - name: last_update
+            description: ""
+
+      - name: stg_gsheets__country
+        description: ""
+        columns:
+          - name: country
+            description: ""
+          - name: country_id
+            description: ""
+          - name: last_update
+            description: ""
+
+      - name: stg_gsheets__customer
+        description: ""
+        columns:
+          - name: email
+            description: ""
+          - name: active
+            description: ""
+          - name: store_id
+            description: ""
+          - name: last_name
+            description: ""
+          - name: activebool
+            description: ""
+          - name: address_id
+            description: ""
+          - name: first_name
+            description: ""
+          - name: create_date
+            description: ""
+          - name: customer_id
+            description: ""
+          - name: last_update
+            description: ""
+
+      - name: stg_gsheets__film
+        description: ""
+        columns:
+          - name: title
+            description: ""
+          - name: length
+            description: ""
+          - name: rating
+            description: ""
+          - name: film_id
+            description: ""
+          - name: fulltext
+            description: ""
+          - name: description
+            description: ""
+          - name: language_id
+            description: ""
+          - name: last_update
+            description: ""
+          - name: rental_rate
+            description: ""
+          - name: release_year
+            description: ""
+          - name: rental_duration
+            description: ""
+          - name: replacement_cost
+            description: ""
+          - name: special_features
+            description: ""
+
+      - name: stg_gheets__film_actor
+        description: ""
+        columns:
+          - name: film_id
+            description: ""
+          - name: actor_id
+            description: ""
+          - name: last_update
+            description: ""
+
+      - name: stg_gsheets__film_category
+        description: ""
+        columns:
+          - name: film_id
+            description: ""
+          - name: category_id
+            description: ""
+          - name: last_update
+            description: ""
+
+      - name: stg_gsheets__inventory
+        description: ""
+        columns:
+          - name: film_id
+            description: ""
+          - name: store_id
+            description: ""
+          - name: last_update
+            description: ""
+          - name: inventory_id
+            description: ""
+
+      - name: stg_gsheets__language
+        description: ""
+        columns:
+          - name: name
+            description: ""
+          - name: language_id
+            description: ""
+          - name: last_update
+            description: ""
+
+      - name: stg_gsheets__payment
+        description: ""
+        columns:
+          - name: amount
+            description: ""
+          - name: staff_id
+            description: ""
+          - name: rental_id
+            description: ""
+          - name: payment_id
+            description: ""
+          - name: customer_id
+            description: ""
+          - name: payment_date
+            description: ""
+
+      - name: stg_gsheets__rental
+        description: ""
+        columns:
+          - name: staff_id
+            description: ""
+          - name: rental_id
+            description: ""
+          - name: customer_id
+            description: ""
+          - name: last_update
+            description: ""
+          - name: rental_date
+            description: ""
+          - name: return_date
+            description: ""
+          - name: inventory_id
+            description: ""
+
+      - name: stg_gsheets__staff
+        description: ""
+        columns:
+          - name: email
+            description: ""
+          - name: active
+            description: ""
+          - name: picture
+            description: ""
+          - name: password
+            description: ""
+          - name: staff_id
+            description: ""
+          - name: store_id
+            description: ""
+          - name: username
+            description: ""
+          - name: last_name
+            description: ""
+          - name: address_id
+            description: ""
+          - name: first_name
+            description: ""
+          - name: last_update
+            description: ""
+
+      - name: stg_gsheets__store
+        description: ""
+        columns:
+          - name: store_id
+            description: ""
+          - name: address_id
+            description: ""
+          - name: last_update
+            description: ""
+          - name: manager_staff_id
+            description: ""
