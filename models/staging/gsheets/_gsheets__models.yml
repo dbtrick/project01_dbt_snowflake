@@ -134,6 +134,7 @@ models:
             description: ""
           - name: last_update
             description: ""
+            
 
       - name: stg_gsheets__film_category
         description: ""
