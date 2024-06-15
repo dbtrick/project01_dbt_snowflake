@@ -28,6 +28,8 @@ final as (
 
   select 
 
+    {{ dbt_utils.generate_surrogate_key(['stg_gsheets__customer.customer_id']) }} as customer_key,
+
     stg_gsheets__customer.customer_id,
     stg_gsheets__customer.customer_email,
     stg_gsheets__customer.customer_name,
