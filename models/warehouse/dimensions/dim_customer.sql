@@ -28,26 +28,26 @@ final as (
 
   select 
 
-    {{ dbt_utils.generate_surrogate_key(['stg_gsheets__customer.customer_id']) }} as customer_key,
+    {{ dbt_utils.generate_surrogate_key(['customer.customer_id']) }} as customer_key,
 
-    stg_gsheets__customer.customer_id,
-    stg_gsheets__customer.customer_email,
-    stg_gsheets__customer.customer_name,
-    stg_gsheets__customer.customer_is_active,
+    customer.customer_id,
+    customer.customer_email,
+    customer.customer_name,
+    customer.customer_is_active,
 
-    stg_gsheets__address.address,
-    stg_gsheets__address.postal_code,
-    stg_gsheets__address.address_number,
-    stg_gsheets__address.district,
+    address.address,
+    address.postal_code,
+    address.address_number,
+    address.district,
 
-    stg_gsheets__city.city,
-    stg_gsheets__country.country
+    city.city,
+    country.country
 
-  from {{ ref('stg_gsheets__customer' )}}
+  from customer
   
-  left join {{ ref('stg_gsheets__address') }} on stg_gsheets__customer.address_id = stg_gsheets__address.address_id
-  left join {{ ref('stg_gsheets__city') }} on stg_gsheets__address.city_id = stg_gsheets__city.city_id
-  left join {{ ref('stg_gsheets__country') }} on stg_gsheets__city.country_id = stg_gsheets__country.country_id
+  left join address on customer.address_id = address.address_id
+  left join city on address.city_id = city.city_id
+  left join country on city.country_id = country.country_id
 
 )
 
