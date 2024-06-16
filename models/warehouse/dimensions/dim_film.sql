@@ -22,24 +22,24 @@ final as (
 
   select
 
-    {{ dbt_utils.generate_surrogate_key(['stg_gsheets__film.film_id']) }} as film_key, 
+    {{ dbt_utils.generate_surrogate_key(['film.film_id']) }} as film_key, 
 
-    stg_gsheets__film.film_id,
-    stg_gsheets__film.film_title,
-    stg_gsheets__film.film_description,
-    stg_gsheets__film.film_length,
-    stg_gsheets__film.film_rating,
-    stg_gsheets__film.release_year,
-    stg_gsheets__film.rental_rate,
-    stg_gsheets__film.rental_duration,
-    stg_gsheets__film.replacement_cost,
+    film.film_id,
+    film.film_title,
+    film.film_description,
+    film.film_length,
+    film.film_rating,
+    film.release_year,
+    film.rental_rate,
+    film.rental_duration,
+    film.replacement_cost,
 
-    stg_gsheets__actor.actor_full_name
+    actor.actor_full_name
 
-  from {{ ref('stg_gsheets__film_actor') }}
+  from film_actor
 
-  left join {{ ref('stg_gsheets__film') }} on stg_gsheets__film_actor.film_id = stg_gsheets__film.film_id
-  left join {{ ref('stg_gsheets__actor') }} on stg_gsheets__film_actor.actor_id = stg_gsheets__actor.actor_id
+  left join film on film_actor.film_id = film.film_id
+  left join actor on film_actor.actor_id = actor.actor_id
 
 )
 
