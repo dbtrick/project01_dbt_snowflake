@@ -14,7 +14,7 @@ final as (
     cast(staff_id as int) as staff_id,
     cast(customer_id as int) as customer_id,
     to_timestamp(rental_date, 'YYYY-MM-DD HH24:MI:SS') as rental_date,
-    to_timestamp(return_date, 'YYYY-MM-DD HH24:MI:SS') as return_date,
+    return_date,
     cast(inventory_id as int) as inventory_id,
     to_timestamp(last_update, 'YYYY-MM-DD HH24:MI:SS') as last_update_timestamp
 
@@ -23,3 +23,9 @@ final as (
 )
 
 select * from final
+
+
+
+
+
+

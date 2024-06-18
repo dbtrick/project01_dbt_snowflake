@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_address
+    description: contains address information for the customers, store and staff.
+
+  - name: dim_customer
+    description: contains information for customer.
+
+  - name: dim_film
+    description: contains information to the film.
+
+  - name: dim_rental
+    description: contains rental information.
+
+  - name: dim_staff
+    description: contains staff infomation.
+
+
+
