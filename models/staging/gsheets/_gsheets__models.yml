@@ -1,241 +1,228 @@
 version: 2
 
 models:
+  - name: stg_gsheets__actor
+    columns:
+      - name: actor_id
+        description: "Unique identifier of actor"
+        tests:
+          - unique
+          - not_null
+      - name: last_name
+        description: "Last name of actor"
+      - name: first_name
+        description: "First name of actor"
+      - name: last_update
+        description: "The timestamp of the last update to the actor's record."
+  
+  - name: stg_gsheets__address
+    columns:
+      - name: address_id
+        description: "The unique identifier for the address."
+      - name: phone
+        description: "The phone number associated with the address."
+      - name: address
+        description: "The primary address line."
+      - name: address2
+        description: "The secondary address line (optional)."
+      - name: city_id
+        description: "The unique identifier for the city."
+      - name: district
+        description: "The district or region of the address."
+      - name: postal_code
+        description: "The postal code associated with the address."
+      - name: last_update
+        description: "The timestamp of the last update to the address record."
 
-      - name: stg_gsheets__actor
-        columns:
-          - name: actor_id
-            description: "Unique identifier of actor"
-            tests:
-              - unique
-              - not_null
-          - name: last_name
-            descrpion: "Last name of actor"
-          - name: first_name
-            descrpion: "Last name of actor"
-          - name: last_update
-            description: "The timestamp of the last update to the actros record."
+  - name: stg_gsheets__category
+    columns:
+      - name: category_id
+        description: "Unique identifier for category"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "Name of category"
+      - name: last_update
+        description: "The timestamp of the last update to the category record."
+
+  - name: stg_gsheets__city
+    columns:
+      - name: city_id
+        description: "Unique identifier for city"
+        tests:
+          - unique
+          - not_null
+      - name: country_id
+        description: "Unique identifier for country"
+      - name: city
+        description: "Name of the city"
+      - name: last_update
+        description: "The timestamp of the last update to the city record."
+
+  - name: stg_gsheets__country
+    columns:
+      - name: country
+        description: "Name of the country"
+      - name: country_id
+        description: "Unique identifier for country"
+      - name: last_update
+        description: "The timestamp of the last update to the country record."
+
+  - name: stg_gsheets__customer
+    columns:
+      - name: email
+        description: "Customer email address"
+      - name: active
+        description: "Customer active status"
+      - name: store_id
+        description: "Store identifier"
+      - name: last_name
+        description: "Last name of customer"
+      - name: activebool
+        description: "Boolean indicating if the customer is active"
+      - name: address_id
+        description: "Address identifier"
+      - name: first_name
+        description: "First name of customer"
+      - name: create_date
+        description: "Date when the customer was created"
+      - name: customer_id
+        description: "Unique identifier for customer"
+      - name: last_update
+        description: "The timestamp of the last update to the customer record."
+
+  - name: stg_gsheets__film
+    columns:
+      - name: title
+        description: "Title of the film"
+      - name: length
+        description: "Length of the film in minutes"
+      - name: rating
+        description: "Film rating"
+      - name: film_id
+        description: "Unique identifier for film"
+      - name: fulltext
+        description: "Full text description of the film"
+      - name: description
+        description: "Short description of the film"
+      - name: language_id
+        description: "Language identifier for the film"
+      - name: last_update
+        description: "The timestamp of the last update to the film record."
+      - name: rental_rate
+        description: "Rental rate of the film"
+      - name: release_year
+        description: "Release year of the film"
+      - name: rental_duration
+        description: "Rental duration in days"
+      - name: replacement_cost
+        description: "Replacement cost of the film"
+      - name: special_features
+        description: "Special features of the film"
+
+  - name: stg_gheets__film_actor
+    columns:
+      - name: film_id
+        description: "Unique identifier for film"
+      - name: actor_id
+        description: "Unique identifier for actor"
+      - name: last_update
+        description: "The timestamp of the last update to the film-actor record."
       
-      - name: stg_gsheets__address
-        columns:
-          - name: address_id
-            description: "The unique identifier for the address."
-          - name: phone
-            description: "The phone number associated with the address."
-          - name: address
-            description: "The primary address line."
-          - name: address2
-            description: "The secondary address line (optional)."
-          - name: city_id
-            description: "The unique identifier for the city."
-          - name: district
-            description: "The district or region of the address."
-          - name: postal_code
-            description: "The postal code associated with the address."
-          - name: last_update
-            description: "The timestamp of the last update to the address record."
+  - name: stg_gsheets__film_category
+    columns:
+      - name: film_id
+        description: "Unique identifier for film"
+      - name: category_id
+        description: "Unique identifier for category"
+      - name: last_update
+        description: "The timestamp of the last update to the film-category record."
 
-      - name: stg_gsheets__category
-        columns:
-          - name: category_id
-            description: "Unique identifier for category"
-            test:
-            - unique
-            - not_null
-          - name: name
-            description: "Name of category"
-          - name: last_update
-            description: "The timestamp of the last update to the category record."
+  - name: stg_gsheets__inventory
+    columns:
+      - name: film_id
+        description: "Unique identifier for film"
+      - name: store_id
+        description: "Unique identifier for store"
+      - name: last_update
+        description: "The timestamp of the last update to the inventory record."
+      - name: inventory_id
+        description: "Unique identifier for inventory"
 
-      - name: stg_gsheets__city
-        columns:
-          - name: city_id
-            description: ""
-            test:
-              - unique
-              - not_null
-          - name: country_id
-            description: ""
-          - name: city
-            description: ""
-          - name: last_update
-            description: ""
+  - name: stg_gsheets__language
+    columns:
+      - name: name
+        description: "Name of the language"
+      - name: language_id
+        description: "Unique identifier for language"
+      - name: last_update
+        description: "The timestamp of the last update to the language record."
 
-      - name: stg_gsheets__country
-        description: ""
-        columns:
-          - name: country
-            description: ""
-          - name: country_id
-            description: ""
-          - name: last_update
-            description: ""
+  - name: stg_gsheets__payment
+    columns:
+      - name: amount
+        description: "Payment amount"
+      - name: staff_id
+        description: "Unique identifier for staff"
+      - name: rental_id
+        description: "Unique identifier for rental"
+      - name: payment_id
+        description: "Unique identifier for payment"
+      - name: customer_id
+        description: "Unique identifier for customer"
+      - name: payment_date
+        description: "Date of payment"
 
-      - name: stg_gsheets__customer
-        description: ""
-        columns:
-          - name: email
-            description: ""
-          - name: active
-            description: ""
-          - name: store_id
-            description: ""
-          - name: last_name
-            description: ""
-          - name: activebool
-            description: ""
-          - name: address_id
-            description: ""
-          - name: first_name
-            description: ""
-          - name: create_date
-            description: ""
-          - name: customer_id
-            description: ""
-          - name: last_update
-            description: ""
+  - name: stg_gsheets__rental
+    columns:
+      - name: staff_id
+        description: "Unique identifier for staff"
+      - name: rental_id
+        description: "Unique identifier for rental"
+      - name: customer_id
+        description: "Unique identifier for customer"
+      - name: last_update
+        description: "The timestamp of the last update to the rental record."
+      - name: rental_date
+        description: "Date of rental"
+      - name: return_date
+        description: "Date of return"
+      - name: inventory_id
+        description: "Unique identifier for inventory"
 
-      - name: stg_gsheets__film
-        description: ""
-        columns:
-          - name: title
-            description: ""
-          - name: length
-            description: ""
-          - name: rating
-            description: ""
-          - name: film_id
-            description: ""
-          - name: fulltext
-            description: ""
-          - name: description
-            description: ""
-          - name: language_id
-            description: ""
-          - name: last_update
-            description: ""
-          - name: rental_rate
-            description: ""
-          - name: release_year
-            description: ""
-          - name: rental_duration
-            description: ""
-          - name: replacement_cost
-            description: ""
-          - name: special_features
-            description: ""
+  - name: stg_gsheets__staff
+    columns:
+      - name: email
+        description: "Staff email address"
+      - name: active
+        description: "Staff active status"
+      - name: picture
+        description: "Staff picture"
+      - name: password
+        description: "Staff password"
+      - name: staff_id
+        description: "Unique identifier for staff"
+      - name: store_id
+        description: "Unique identifier for store"
+      - name: username
+        description: "Staff username"
+      - name: last_name
+        description: "Last name of staff"
+      - name: address_id
+        description: "Unique identifier for address"
+      - name: first_name
+        description: "First name of staff"
+      - name: last_update
+        description: "The timestamp of the last update to the staff record."
 
-      - name: stg_gheets__film_actor
-        description: ""
-        columns:
-          - name: film_id
-            description: ""
-          - name: actor_id
-            description: ""
-          - name: last_update
-            description: ""
-            
-
-      - name: stg_gsheets__film_category
-        description: ""
-        columns:
-          - name: film_id
-            description: ""
-          - name: category_id
-            description: ""
-          - name: last_update
-            description: ""
-
-      - name: stg_gsheets__inventory
-        description: ""
-        columns:
-          - name: film_id
-            description: ""
-          - name: store_id
-            description: ""
-          - name: last_update
-            description: ""
-          - name: inventory_id
-            description: ""
-
-      - name: stg_gsheets__language
-        description: ""
-        columns:
-          - name: name
-            description: ""
-          - name: language_id
-            description: ""
-          - name: last_update
-            description: ""
-
-      - name: stg_gsheets__payment
-        description: ""
-        columns:
-          - name: amount
-            description: ""
-          - name: staff_id
-            description: ""
-          - name: rental_id
-            description: ""
-          - name: payment_id
-            description: ""
-          - name: customer_id
-            description: ""
-          - name: payment_date
-            description: ""
-
-      - name: stg_gsheets__rental
-        description: ""
-        columns:
-          - name: staff_id
-            description: ""
-          - name: rental_id
-            description: ""
-          - name: customer_id
-            description: ""
-          - name: last_update
-            description: ""
-          - name: rental_date
-            description: ""
-          - name: return_date
-            description: ""
-          - name: inventory_id
-            description: ""
-
-      - name: stg_gsheets__staff
-        description: ""
-        columns:
-          - name: email
-            description: ""
-          - name: active
-            description: ""
-          - name: picture
-            description: ""
-          - name: password
-            description: ""
-          - name: staff_id
-            description: ""
-          - name: store_id
-            description: ""
-          - name: username
-            description: ""
-          - name: last_name
-            description: ""
-          - name: address_id
-            description: ""
-          - name: first_name
-            description: ""
-          - name: last_update
-            description: ""
-
-      - name: stg_gsheets__store
-        description: ""
-        columns:
-          - name: store_id
-            description: ""
-          - name: address_id
-            description: ""
-          - name: last_update
-            description: ""
-          - name: manager_staff_id
-            description: ""
+  - name: stg_gsheets__store
+    columns:
+      - name: store_id
+        description: "Unique identifier for store"
+      - name: address_id
+        description: "Unique identifier for address"
+      - name: last_update
+        description: "The timestamp of the last update to the store record."
+      - name: manager_staff_id
+        description: "Unique identifier for manager staff"
