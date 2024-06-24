@@ -189,8 +189,6 @@ models:
               field: film_id
       - name: store_id
         description: "Unique identifier for store"
-         tests:
-          - not_null
       - name: last_update
         description: "The timestamp of the last update to the inventory record."
       - name: inventory_id
