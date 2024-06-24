@@ -30,9 +30,12 @@ final as (
 
   from payment
 
-  left join staff on payment.staff_id = staff.staff_id
-  left join rental on payment.rental_id = rental.rental_id
-  left join customer on payment.customer_id = customer.customer_id
+  left join staff 
+    on payment.staff_id = staff.staff_id
+  left join rental 
+    on payment.rental_id = rental.rental_id
+  left join customer 
+    on payment.customer_id = customer.customer_id
 )
 
 select * from final

@@ -1,15 +1,12 @@
 with 
 
 table_source as (
-
   select * from {{ source('src_gsheets', 'city') }}
-
 ),
 
 final as (
 
   select 
-
     cast(city_id as int) as city_id,
     city,
     cast(country_id as int) as country_id,

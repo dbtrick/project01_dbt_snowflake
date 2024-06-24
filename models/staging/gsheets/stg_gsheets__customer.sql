@@ -1,15 +1,12 @@
 with 
 
 table_source as (
-
   select * from {{ source('src_gsheets', 'customer') }}
-
 ),
 
 final as (
 
   select 
-
     cast(customer_id as int) as customer_id,
     email as customer_email,
 
@@ -26,7 +23,6 @@ final as (
     to_timestamp(last_update, 'YYYY-MM-DD HH24:MI:SS') as last_update_timestamp
   
   from table_source
-
 )
 
 select * from final

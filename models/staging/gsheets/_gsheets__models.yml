@@ -18,6 +18,9 @@ models:
   - name: stg_gsheets__address
     columns:
       - name: address_id
+        tests:
+        - unique
+        - not_null
         description: "The unique identifier for the address."
       - name: phone
         description: "The phone number associated with the address."
@@ -27,6 +30,10 @@ models:
         description: "The secondary address line (optional)."
       - name: city_id
         description: "The unique identifier for the city."
+        tests:
+          - relationships:
+              to: ref('stg_gsheets__city')
+              field: city_id
       - name: district
         description: "The district or region of the address."
       - name: postal_code
@@ -55,6 +62,10 @@ models:
           - not_null
       - name: country_id
         description: "Unique identifier for country"
+        tests:
+          - relationships:
+              to: ref('stg_gsheets__country')
+              field: country_id
       - name: city
         description: "Name of the city"
       - name: last_update
@@ -66,6 +77,9 @@ models:
         description: "Name of the country"
       - name: country_id
         description: "Unique identifier for country"
+        tests:
+          - unique
+          - not_null
       - name: last_update
         description: "The timestamp of the last update to the country record."
 
@@ -83,12 +97,19 @@ models:
         description: "Boolean indicating if the customer is active"
       - name: address_id
         description: "Address identifier"
+        tests:
+          - relationships:
+              to: ref('stg_gsheets__address')
+              field: address_id
       - name: first_name
         description: "First name of customer"
       - name: create_date
         description: "Date when the customer was created"
       - name: customer_id
         description: "Unique identifier for customer"
+        tests:
+          - unique
+          - not_null
       - name: last_update
         description: "The timestamp of the last update to the customer record."
 
@@ -102,12 +123,17 @@ models:
         description: "Film rating"
       - name: film_id
         description: "Unique identifier for film"
+        tests:
+          - unique
+          - not_null
       - name: fulltext
         description: "Full text description of the film"
       - name: description
         description: "Short description of the film"
       - name: language_id
         description: "Language identifier for the film"
+        tests:
+          - not_null
       - name: last_update
         description: "The timestamp of the last update to the film record."
       - name: rental_rate
@@ -125,8 +151,15 @@ models:
     columns:
       - name: film_id
         description: "Unique identifier for film"
+        tests:
+          - relationships:
+              to: ref('stg_gsheets__film')
+              field: film_id
       - name: actor_id
         description: "Unique identifier for actor"
+        tests:
+          - unique
+          - not_null
       - name: last_update
         description: "The timestamp of the last update to the film-actor record."
       
@@ -134,8 +167,15 @@ models:
     columns:
       - name: film_id
         description: "Unique identifier for film"
+        tests:
+          - relationships:
+              to: ref('stg_gsheets__film')
+              field: film_id
       - name: category_id
         description: "Unique identifier for category"
+        tests:
+          - unique
+          - not_null
       - name: last_update
         description: "The timestamp of the last update to the film-category record."
 
@@ -143,12 +183,21 @@ models:
     columns:
       - name: film_id
         description: "Unique identifier for film"
+        tests:
+          - relationships:
+              to: ref('stg_gsheets__film')
+              field: film_id
       - name: store_id
         description: "Unique identifier for store"
+         tests:
+          - not_null
       - name: last_update
         description: "The timestamp of the last update to the inventory record."
       - name: inventory_id
         description: "Unique identifier for inventory"
+        tests:
+          - unique
+          - not_null
 
   - name: stg_gsheets__language
     columns:
@@ -156,6 +205,9 @@ models:
         description: "Name of the language"
       - name: language_id
         description: "Unique identifier for language"
+        tests:
+          - unique
+          - not_null
       - name: last_update
         description: "The timestamp of the last update to the language record."
 
@@ -165,12 +217,25 @@ models:
         description: "Payment amount"
       - name: staff_id
         description: "Unique identifier for staff"
+        tests:
+          - not_null
       - name: rental_id
         description: "Unique identifier for rental"
+        tests:
+          - relationships:
+              to: ref('stg_gsheets__rental')
+              field: rental_id
       - name: payment_id
         description: "Unique identifier for payment"
+        tests:
+          - unique
+          - not_null
       - name: customer_id
         description: "Unique identifier for customer"
+        tests:
+          - relationships:
+              to: ref('stg_gsheets__customer')
+              field: customer_id
       - name: payment_date
         description: "Date of payment"
 
@@ -180,6 +245,9 @@ models:
         description: "Unique identifier for staff"
       - name: rental_id
         description: "Unique identifier for rental"
+        tests:
+          - unique
+          - not_null
       - name: customer_id
         description: "Unique identifier for customer"
       - name: last_update
@@ -190,6 +258,10 @@ models:
         description: "Date of return"
       - name: inventory_id
         description: "Unique identifier for inventory"
+        tests:
+          - relationships:
+              to: ref('stg_gsheets__inventory')
+              field: inventory_id
 
   - name: stg_gsheets__staff
     columns:
@@ -203,6 +275,9 @@ models:
         description: "Staff password"
       - name: staff_id
         description: "Unique identifier for staff"
+        tests:
+          - unique
+          - not_null
       - name: store_id
         description: "Unique identifier for store"
       - name: username
@@ -211,6 +286,10 @@ models:
         description: "Last name of staff"
       - name: address_id
         description: "Unique identifier for address"
+        tests:
+          - relationships:
+              to: ref('stg_gsheets__address')
+              field: address_id
       - name: first_name
         description: "First name of staff"
       - name: last_update
@@ -220,8 +299,15 @@ models:
     columns:
       - name: store_id
         description: "Unique identifier for store"
+        tests:
+          - unique
+          - not_null
       - name: address_id
         description: "Unique identifier for address"
+        tests:
+          - relationships:
+              to: ref('stg_gsheets__address')
+              field: address_id
       - name: last_update
         description: "The timestamp of the last update to the store record."
       - name: manager_staff_id
