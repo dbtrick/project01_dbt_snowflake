@@ -1,15 +1,12 @@
 with
 
 table_source as (
-
   select * from {{ source('src_gsheets', 'staff') }}
-
 ),
 
 final as (
 
   select 
-
     cast(staff_id as int) as staff_id,
     email,
     password,
@@ -22,7 +19,6 @@ final as (
     last_update
 
   from table_source
-
 )
 
 select * from final
