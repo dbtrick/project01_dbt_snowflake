@@ -3,3 +3,8 @@ version: 2
 models:
   - name: fct_payment
     description: "A fact table containing payment transaction details"
+    columns:
+      - name: payment_key
+        tests:
+          - unique
+          - not_null

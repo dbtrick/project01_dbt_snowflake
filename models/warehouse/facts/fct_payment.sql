@@ -16,20 +16,21 @@ customer as (
   select * from {{ ref('dim_customer') }}
 ),
 
-address as (
-  select * from {{ ref('dim_address')}}
-),
-
 final as (
 
   select 
-    {{ dbt_utils.generate_surrogate_key(['payment.payment_id']) }} as payment_key,
-    {{ dbt_utils.generate_surrogate_key(['staff.staff_id']) }} as staff_key,
-    {{ dbt_utils.generate_surrogate_key(['rental.rental_id']) }} as rental_key,
-    {{ dbt_utils.generate_surrogate_key(['customer.customer_id']) }} as customer_key,
+    {{ dbt_utils.generate_surrogate_key([
+            'payment.payment_id', 
+            'staff.staff_id', 
+            'rental.rental_id', 
+            'customer.customer_id'
+        ]) }} as payment_key,
 
-    
     payment.payment_id,
+    staff.staff_id,
+    rental.rental_id,
+    customer.customer_id,
+
     amount,
     payment_date
 
@@ -44,4 +45,5 @@ final as (
 )
 
 select * from final
+
 
