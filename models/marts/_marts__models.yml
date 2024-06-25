@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: payment_summary
+    description: "One nig table containing information about the payment and rental information"
