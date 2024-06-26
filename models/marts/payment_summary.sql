@@ -20,11 +20,15 @@ dim_address as (
   select * from {{ ref('dim_address')}}
 ),
 
-city as (
+stg_address as (
+  select * from {{ ref('stg_gsheets__address') }}
+),
+
+stg_city as (
   select * from {{ ref('stg_gsheets__city') }}
 ),
 
-country as (
+stg_country as (
   select * from {{ ref('stg_gsheets__country') }}
 ),
 
@@ -41,10 +45,9 @@ final as (
     dim_customer.postal_code,
     dim_customer.address_number,
     dim_customer.district,
-
-    -- city.city,
-    -- country.country
-
+    dim_customer.city,
+    dim_customer.country,
+  
     dim_staff.staff_fullname,
     dim_staff.username,
     dim_staff.email,
@@ -52,16 +55,9 @@ final as (
     dim_staff.staff_address,
     dim_staff.store_address,
 
-    -- address.address,
-    -- address.postal_code,
-    -- address.address_number,
-    -- address.district,
-    -- city.city,
-    -- country.country
-
     dim_rental.rental_date,
     dim_rental.return_date,
-    -- inventory.film_id,
+    dim_rental.film_id,
 
     fct_payment.amount,
     fct_payment.payment_date
@@ -74,10 +70,6 @@ final as (
     on fct_payment.staff_id = dim_staff.staff_id
   left join dim_rental
     on fct_payment.rental_id = dim_rental.rental_id
-  -- left join dim_address
-  --   on dim_staff = dim_address.address_id = dim_staff.address_id
-
-  
 )
 
 select * from final
