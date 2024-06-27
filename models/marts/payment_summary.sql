@@ -16,22 +16,6 @@ dim_customer as (
   select * from {{ ref('dim_customer') }}
 ),
 
-dim_address as (
-  select * from {{ ref('dim_address')}}
-),
-
-stg_address as (
-  select * from {{ ref('stg_gsheets__address') }}
-),
-
-stg_city as (
-  select * from {{ ref('stg_gsheets__city') }}
-),
-
-stg_country as (
-  select * from {{ ref('stg_gsheets__country') }}
-),
-
 final as (
 
   select
