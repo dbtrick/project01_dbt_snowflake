@@ -1,4 +1,4 @@
-with 
+ with 
 
 customer  as (
   select * from {{ ref('stg_gsheets__customer' )}}
