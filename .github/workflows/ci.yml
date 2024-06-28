@@ -7,9 +7,9 @@ jobs:
 	build-and-deploy:
 	  runs-on: ubuntu-latest
 	  env:
-      DBT_USER=devph
-      DBT_PASSWORD=653508devph@Snowflake
-      SNOWFLAKE_ACCOUNT=tpfiwgg-og99352
+      DBT_USER: ${{ secrets.DBT_USER }}
+      DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}	
+      SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
 
 	  steps:
       - name: Checkout branch
