@@ -1,5 +1,5 @@
 pull_request:
-  branches: ["main"]
+  branches: ["feature/PROJ-01-warehouse"]
 
 workflow_dispatch:
 
