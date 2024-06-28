@@ -17,7 +17,6 @@ final as (
 
   from fct_payment
   group by rental_id
-
 )
 
 select * from final
