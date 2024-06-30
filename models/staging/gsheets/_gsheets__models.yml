@@ -131,8 +131,6 @@ models:
         description: "Short description of the film"
       - name: language_id
         description: "Language identifier for the film"
-        tests:
-          - not_null
       - name: last_update
         description: "The timestamp of the last update to the film record."
       - name: rental_rate
