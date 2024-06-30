@@ -28,4 +28,7 @@ jobs:
         run: dbt deps
 
       - name: Deploy & Test Models (dev)
+        env:
+          DBT_USER: ${{ secrets.DBT_USER }}
+          DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
         run: dbt build --profiles-dir . --target dev
