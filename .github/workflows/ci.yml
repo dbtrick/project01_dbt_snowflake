@@ -3,7 +3,14 @@ name: CI
 on:
   pull_request:
     branches: ["main"]
+
+  push:
+    branches: [feature/PROJ-01-warehouse]
+
   workflow_dispatch:
+
+permisions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -29,3 +36,11 @@ jobs:
 
       - name: Deploy & Test Models (dev)
         run: dbt build --profiles-dir . --target dev
+
+      - name: Compile Docs
+        run: dbt docs generate --profiles-dir . --target dev
+      
+      - name: Deploy Docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: target
