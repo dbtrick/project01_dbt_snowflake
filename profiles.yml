@@ -4,10 +4,10 @@ sf_analytics:
       account: tpfiwgg-og99352
       database: analytics
       password: "{{ env_var( 'DBT_PASSWORD')}}"
-      role: dbt_role
+      role: accountadmin
       schema: staging
       threads: 4
       type: snowflake
       user: "{{ env_var( 'DBT_USER')}}"
-      warehouse: dbt_wh
+      warehouse: compute_wh
   target: dev
