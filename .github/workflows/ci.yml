@@ -12,8 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DBT_USER: ${{ secrets.DBT_USER }}
-      
-      SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+      DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
 
     steps:
       - name: Checkout branch
