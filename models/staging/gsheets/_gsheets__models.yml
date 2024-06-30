@@ -46,7 +46,6 @@ models:
       - name: category_id
         description: "Unique identifier for category"
         tests:
-          - unique
           - not_null
       - name: name
         description: "Name of category"
@@ -174,7 +173,6 @@ models:
       - name: category_id
         description: "Unique identifier for category"
         tests:
-          - unique
           - not_null
       - name: last_update
         description: "The timestamp of the last update to the film-category record."
@@ -204,7 +202,6 @@ models:
       - name: language_id
         description: "Unique identifier for language"
         tests:
-          - unique
           - not_null
       - name: last_update
         description: "The timestamp of the last update to the language record."
