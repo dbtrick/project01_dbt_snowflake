@@ -1,0 +1,46 @@
+sf_analytics:
+  outputs:
+    dev:
+      type: snowflake
+      account: ${env_var:DBT_SNOWFLAKE_ACCOUNT}
+      user: ${env_var:DBT_SNOWFLAKE_USER}
+      password: ${env_var:DBT_SNOWFLAKE_PASSWORD}
+      database: ${env_var:DBT_SNOWFLAKE_DATABASE}
+      warehouse: ${env_var:DBT_SNOWFLAKE_WAREHOUSE}
+      schema: ${env_var:DBT_SNOWFLAKE_SCHEMA}
+      threads: 4
+  target: dev
+
+# sf_analytics:
+#   outputs:
+#     dev:
+#       type: snowflake
+#       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+#       user: "{{ env_var('DBT_USER') }}"
+#       password: "{{ env_var('DBT_PASSWORD') }}"
+#       role: dbt_role
+#       database: analytics
+#       warehouse: dbt_wh
+#       schema: staging
+#       threads: 4
+#     ci:
+#       type: snowflake
+#       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+#       user: "{{ env_var('DBT_USER') }}"
+#       password: "{{ env_var('DBT_PASSWORD') }}"
+#       role: dbt_role
+#       database: analytics
+#       warehouse: dbt_wh
+#       schema: staging
+#       threads: 4
+#     prod:
+#       type: snowflake
+#       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+#       user: "{{ env_var('DBT_USER') }}"
+#       password: "{{ env_var('DBT_PASSWORD') }}"
+#       role: dbt_role
+#       database: analytics
+#       warehouse: dbt_wh
+#       schema: staging
+#       threads: 4
+#   target: dev
