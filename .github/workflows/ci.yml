@@ -1,14 +1,12 @@
 name: CI
 
 on:
-
   pull_request:
     branches: ["main"]
-
   workflow_dispatch:
 
 jobs:
-	build-and-deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     env:
       DBT_USER: ${{ secrets.DBT_USER }}
