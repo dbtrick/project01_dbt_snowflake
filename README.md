@@ -17,7 +17,7 @@ This repository contains the dbt project structure for an end-to-end data engine
 ### [Warehouse Layer](https://github.com/dbtrick/project01_dbt_snowflake/tree/main/models/warehouse)
 - **Facts and Dimensions Tables:** Create fact and dimension tables based on the star schema.
 - **Surrogate Keys:** Utilized [dbt_utils](https://hub.getdbt.com/dbt-labs/dbt_utils/latest/) to generate surrogate keys.
-- 
+  
 ### [Marts Layer](https://github.com/dbtrick/project01_dbt_snowflake/tree/main/models/marts)
 - **One Big Table:** Aggregate data into a single table for easy access and analysis.
 - **Cube Table:** Create aggregate tables based on business requirements.
