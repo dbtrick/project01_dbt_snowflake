@@ -19,8 +19,8 @@ dim_customer as (
 final as (
 
   select
-    fct_payment.payment_id,
-    dim_rental.rental_id,
+    fct_payment.payment_key,
+    dim_rental.rental_key,
 
     dim_customer.customer_name,
     dim_customer.customer_email,
@@ -49,11 +49,11 @@ final as (
   from fct_payment
 
   left join dim_customer
-    on fct_payment.customer_id = dim_customer.customer_id
+    on fct_payment.customer_key = dim_customer.customer_key
   left join dim_staff
-    on fct_payment.staff_id = dim_staff.staff_id
+    on fct_payment.staff_key = dim_staff.staff_key
   left join dim_rental
-    on fct_payment.rental_id = dim_rental.rental_id
+    on fct_payment.rental_key = dim_rental.rental_key
 )
 
 select * from final

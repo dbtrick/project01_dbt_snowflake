@@ -7,16 +7,16 @@ fct_payment as (
 final as (
 
   select
-    fct_payment.rental_id,
+    fct_payment.rental_key,
 
     sum(amount) as total_amount,
     avg(amount) as average_amount,
     min(amount) as minimum_amount,
     max(amount) as maximum_amount,
-    count(payment_id) as total_payments
+    count(rental_key) as total_payments
 
   from fct_payment
-  group by rental_id
+  group by rental_key
 )
 
 select * from final
