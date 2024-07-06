@@ -2,7 +2,7 @@ vsersion: 2
 
 sources:
   - name: src_gsheets
-    schema: raw_google_sheets
+    schema: gsheets
     database: raw
     tables:
       - name: actor

@@ -19,18 +19,11 @@ customer as (
 final as (
 
   select 
-    {{ dbt_utils.generate_surrogate_key([
-            'payment.payment_id', 
-            'staff.staff_id', 
-            'rental.rental_id', 
-            'customer.customer_id'
-        ]) }} as payment_key,
+    {{ dbt_utils.generate_surrogate_key(['payment.payment_id']) }} as payment_key,
 
-    payment.payment_id,
-    staff.staff_id,
-    rental.rental_id,
-    customer.customer_id,
-
+    staff.staff_key,
+    rental.rental_key,
+    customer.customer_key,
     amount,
     payment_date
 
