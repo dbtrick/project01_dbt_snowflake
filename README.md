@@ -9,7 +9,7 @@ This repository contains the dbt project structure for an end-to-end data engine
 - Extract & Load Data using Airbyte
 - Transform Data using dbt
 - Version Control and Automation (CI/CD) using Git and GitHub
-- Reporting using Looker Studio
+- Orchestration using Dagster
 
 
 ### Resources:
