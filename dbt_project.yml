@@ -2,11 +2,11 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'sf_analytics'
+name: 'wwi_analytics'
 version: '1.0.0'
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'sf_analytics'
+profile: 'wwi_analytics'
 
 vars:
   'dbt_date:time_zone': 'America/New_York'
