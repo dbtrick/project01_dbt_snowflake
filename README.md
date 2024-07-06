@@ -2,7 +2,7 @@
 This repository contains the dbt project structure for an end-to-end data engineering workflow using Snowflake. The project focuses on data transformation, modeling, orchestration, and automation using CI/CD. Below is the architecture diagram that outlines the various layers and components of the project.
 
 ### Project Data Architecture Diagram
-![readme-](https://github.com/dbtrick/dbt_snowflake/assets/172040645/1e4924bf-1ce4-4ed2-8e3a-4d28c0ee7e34)
+![readme-](https://i.postimg.cc/520TZFqz/readme.png)
 
 
 ### Components
