@@ -18,12 +18,14 @@ Purpose: Create aggregated tables based on business requirements.
 Tables:
 One Big Table: Consolidated table for reporting.
 Cube Tables: Pre-aggregated tables designed for fast querying and reporting.
+
 CI/CD Using GitHub Actions
 Automated Processes:
 Build: Compile and test the dbt project.
 Test: Run dbt tests to ensure data quality.
 Deploy: Deploy the changes to the production environment.
 Documentation: Host the dbt documentation using GitHub Pages (automated).
+
 Orchestration Using Dagster
 Extract & Load: Orchestrate the extraction and loading of data.
 Transformations: Orchestrate the dbt transformations.
