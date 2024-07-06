@@ -1,46 +1,46 @@
-# name: CI
+name: CI
 
-# on:
-#   pull_request:
-#     branches: ["main"]
+on:
+  pull_request:
+    branches: ["main"]
 
-#   push:
-#     branches: [feature/PROJ-01-warehouse]
+  # push:
+  #   branches: [feature/PROJ-01-warehouse]
 
-#   workflow_dispatch:
+  workflow_dispatch:
 
-# permissions:
-#   contents: write
+permissions:
+  contents: write
 
-# jobs:
-#   build-and-deploy:
-#     runs-on: ubuntu-latest
-#     env:
-#       DBT_USER: ${{ secrets.DBT_USER }}
-#       DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      DBT_USER: ${{ secrets.DBT_USER }}
+      DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
 
-#     steps:
-#       - name: Checkout branch
-#         uses: actions/checkout@v3
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
 
-#       - name: Setup Python
-#         uses: actions/setup-python@v4
-#         with:
-#           python-version: '3.9'
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
 
-#       - name: Install dbt
-#         run: pip3 install dbt-snowflake
+      - name: Install dbt
+        run: pip3 install dbt-snowflake
 
-#       - name: Install dbt packages
-#         run: dbt deps
+      - name: Install dbt packages
+        run: dbt deps
 
-#       - name: Deploy & Test Models (dev)
-#         run: dbt build --profiles-dir . --target dev
+      - name: Deploy & Test Models (dev)
+        run: dbt build --profiles-dir . --target dev
 
-#       - name: Compile Docs
-#         run: dbt docs generate --profiles-dir . --target dev
+      # - name: Compile Docs
+      #   run: dbt docs generate --profiles-dir . --target dev
       
-#       - name: Deploy Docs
-#         uses: JamesIves/github-pages-deploy-action@v4
-#         with:
-#           folder: target
+      # - name: Deploy Docs
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     folder: target
