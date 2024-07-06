@@ -5,7 +5,17 @@ wwi_analytics:
       database: analytics
       password: "{{ env_var( 'DBT_PASSWORD')}}"
       role: dbt_role
-      schema: staging
+      schema: dbt_dev
+      threads: 4
+      type: snowflake
+      user: "{{ env_var( 'DBT_USER')}}"
+      warehouse: dbt_wh
+    prod:
+      account: "{{ env_var( 'DBT_ACCOUNT')}}"
+      database: analytics
+      password: "{{ env_var( 'DBT_PASSWORD')}}"
+      role: dbt_role
+      schema: dbt_dev
       threads: 4
       type: snowflake
       user: "{{ env_var( 'DBT_USER')}}"
