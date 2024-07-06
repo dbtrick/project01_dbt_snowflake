@@ -1,5 +1,3 @@
-dbt Snowflake Project
-Overview
 This project demonstrates an end-to-end data engineering workflow using dbt with Snowflake, focusing on data transformation, modeling, and orchestration. The project is structured into three main layers: Staging, Data Warehouse, and Marts. Additionally, CI/CD is implemented using GitHub Actions, and orchestration is handled using Dagster.
 
 
