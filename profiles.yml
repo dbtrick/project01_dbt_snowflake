@@ -1,7 +1,7 @@
-sf_analytics:
+wwi_analytics:
   outputs:
     dev:
-      account: tpfiwgg-og99352
+      account: "{{ env_var( 'DBT_ACCOUNT')}}"
       database: analytics
       password: "{{ env_var( 'DBT_PASSWORD')}}"
       role: dbt_role
