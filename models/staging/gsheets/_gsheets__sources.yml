@@ -31,6 +31,10 @@ sources:
         description: "Table containing payment information."
       - name: rental
         description: "Table containing rental information."
+        loaded_at_field: last_update_timestamp
+        freshness:
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 24, period: hour}
       - name: staff
         description: "Table containing staff information."
       - name: store
