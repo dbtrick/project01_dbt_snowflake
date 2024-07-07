@@ -25,6 +25,7 @@ This repository contains the dbt project structure for an end-to-end data engine
 ### [CI/CD with GitHub Actions](https://github.com/dbtrick/project01_dbt_snowflake/tree/main/.github/workflows)
 - **Automate dbt Build:** Automate the dbt build process before deploying models.
 - **Automate dbt Documentation:** Generate dbt documentation and host it using GitHub Pages.
+- **View dbt documentation:** https://dbtrick.github.io/project01_dbt_snowflake/#!/overview
 
 ### [Orchestration with Dagster](https://github.com/dbtrick/project01_dbt_snowflake/tree/main/dw_dagster)
 - **Airbyte for Extraction:** Orchestrate the data extraction process using Airbyte.
