@@ -30,9 +30,10 @@ For this project, I worked with sample client DVD Rental to revolutionize their 
 - **Airbyte for Extraction:** Orchestrate the data extraction process using Airbyte.
 - **dbt for Transformation:** Orchestrate the data transformation process using dbt.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+### [Data Visualization using Looker](https://lookerstudio.google.com/reporting/4b27a047-c5e6-4e6a-bd0e-f913677c2b79/page/Dub4D)
+- Enhanced sales insights with a detailed ”Contribution of Each Store to Total Sales” chart.
+- Boosted team performance through the ”Top Performing Employees” chart.
+- Improved customer retention strategies using ”Customer Engagement Levels” analysis.
+- Refined marketing strategies by identifying ”Most Popular DVD Rental Locations.”
+
+
