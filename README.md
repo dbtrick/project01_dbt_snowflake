@@ -1,6 +1,5 @@
 ## Overview
-This repository contains the dbt project structure for an end-to-end data engineering workflow. The project focuses on data transformation, modeling, orchestration, and automation using CI/CD. Below is the architecture diagram that outlines the various layers and components of the project.
-
+For this project, I worked with sample client DVD Rental to revolutionize their DVD rental operations. Using advanced data technologies, I implemented a comprehensive solution for data management and analytics. The project includes leveraging Snowflake for scalable data storage, Airbyte for seamless data integration, dbt for automated data transformations, Git and GitHub for version control, GitHub Actions for CI/CD automation, Looker for intuitive data visualization, and Dagster for orchestrating data workflows. The dataset provided by DVD Rental encompasses critical insights into their rental business operations. [DVD Rental Sample Datasets.](https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/)
 ### Project Data Architecture Diagram
 ![readme-](https://github.com/dbtrick/project01_dbt_snowflake/assets/172040645/c61a9942-bf02-451b-add2-3e94a93bb0b9)
 
